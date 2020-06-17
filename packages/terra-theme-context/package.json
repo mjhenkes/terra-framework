@@ -1,5 +1,5 @@
 {
-  "name": "terra-theme-context",
+  "name": "@mjhenkes/terra-theme-context",
   "main": "lib/ThemeContext.js",
   "version": "1.2.0",
   "description": "A react context to provide the current theme.",
