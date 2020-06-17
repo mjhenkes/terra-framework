@@ -38,6 +38,5 @@
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest",
     "jest": "jest --config ../../jestconfig.js"
-  },
-  "gitHead": "b56577a610330eccfe5cb9d11865c8bde3f10dbe"
+  }
 }
