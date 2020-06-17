@@ -1,5 +1,5 @@
 {
-  "name": "@mjhenkes/terra-theme-provider",
+  "name": "mjhenkes-terra-theme-provider",
   "main": "lib/ThemeProvider.js",
   "version": "4.2.0",
   "description": "The theme provider component provides a theme to Terra UI components rendered within it via CSS custom properties a.k.a CSS variables.",
@@ -42,5 +42,6 @@
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  }
+  },
+  "gitHead": "b56577a610330eccfe5cb9d11865c8bde3f10dbe"
 }
