@@ -66,8 +66,8 @@
   },
   "scripts": {
     "bootstrap:hoist": "lerna bootstrap --hoist",
-    "clean": "lerna clean --yes && rm -rf node_modules",
-    "clean:install": "npm run clean && npm install || true",
+    "clean": "lerna clean --yes && rm -rf node_modules || true",
+    "clean:install": "npm run clean && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
     "compile": "npm run compile:clean && npm run compile:build",
     "compile:build": "ls ./packages | xargs -I {} babel packages/{}/src --out-dir packages/{}/lib --copy-files",
