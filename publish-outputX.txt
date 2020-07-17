@@ -1,0 +1,7 @@
+
+Found 2 packages to publish:
+ - mjhenkes-terra-theme-context => 1.10.0
+ - mjhenkes-terra-theme-provider => 4.8.0
+
+Successfully published:
+ - mjhenkes-terra-theme-context@1.12.0
