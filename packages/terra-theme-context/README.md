@@ -1,7 +1,5 @@
 # Terra Theme Context
 
-derp
-
 [![NPM version](https://badgen.net/npm/v/terra-theme-context)](https://www.npmjs.com/package/terra-theme-context)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
