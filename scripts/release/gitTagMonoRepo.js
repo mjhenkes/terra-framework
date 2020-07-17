@@ -3,7 +3,7 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
-const filePath = './publish-outputX.txt';
+const filePath = './publish-output.txt';
 
 const setupGit = () => {
   const travis = process.env.TRAVIS;
