@@ -11,7 +11,7 @@ const setupGit = () => {
   if (travis) {
     execSync('git config --global user.email "travis@travis-ci.org"');
     execSync('git config --global user.name "Travis CI"');
-    const remoteUrl = execSync('git config --get remote.origin.url', { encoding: 'utf8' });
+    const remoteUrl = execSync('git config --get remote.origin.url', { encoding: 'utf8' }).trim();
     console.log('remote', remoteUrl);
     const token = process.env.GITHUB_TOKEN;
     const newUrl = remoteUrl.replace('https://', `https://${token}@`);
