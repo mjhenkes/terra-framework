@@ -3,6 +3,8 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
+const filePath = './publish-outputX.txt';
+
 const setupGit = () => {
   const travis = process.env.TRAVIS;
 
@@ -10,8 +12,10 @@ const setupGit = () => {
     execSync('git config --global user.email "travis@travis-ci.org"');
     execSync('git config --global user.name "Travis CI"');
     const remoteUrl = execSync('git config --get remote.origin.url', { encoding: 'utf8' });
-    const token = process.argv[2];
+    console.log('remote', remoteUrl);
+    const token = process.env.GITHUB_TOKEN;
     const newUrl = remoteUrl.replace('https://', `https://${token}@`);
+    console.log('newUrl', newUrl);
     execSync(`git remote set-url origin "${newUrl}" > /dev/null 2>&1`);
   }
 };
@@ -27,8 +31,8 @@ const getTags = (output) => {
   return withoutDashes.split('\n');
 };
 
-if (fs.existsSync('./publish-output.txt')) {
-  const output = fs.readFileSync('./publish-output.txt', 'utf8');
+if (fs.existsSync(filePath)) {
+  const output = fs.readFileSync(filePath, 'utf8');
   console.log(output);
   const tags = getTags(output);
   if (tags) {
