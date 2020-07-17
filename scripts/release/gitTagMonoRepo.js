@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const { execSync } = require('child_process');
 
@@ -8,7 +10,7 @@ const setupGit = () => {
     execSync('git config --global user.email "travis@travis-ci.org"');
     execSync('git config --global user.name "Travis CI"');
     const remoteUrl = execSync('git config --get remote.origin.url', { encoding: 'utf8' });
-    const token = process.env.GITHUB_TOKEN;
+    const token = process.argv[2];
     const newUrl = remoteUrl.replace('https://', `https://${token}@`);
     execSync(`git remote set-url origin "${newUrl}" > /dev/null 2>&1`);
   }

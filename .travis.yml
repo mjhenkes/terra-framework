@@ -19,7 +19,7 @@ jobs:
         # add auth token to .npmrc for lerna publish
         - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
         - npx lerna publish from-package --yes > publish-output.txt
-        - node ./scripts/release/gitTagMonoRepo.js
+        - node ./scripts/release/gitTagMonoRepo.js $GITHUB_TOKEN
       before_deploy:
         # Build again for deployment because we need the Public path to be updated.
         - TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY='c494ac44c8' TERRA_DEV_SITE_NEW_RELIC_APPLICATION_ID='144458769' TERRA_DEV_SITE_PUBLIC_PATH='/terra-framework/' npm run compile:prod
